@@ -1,0 +1,41 @@
+{{define "index"}}
+<!doctype html>
+<html>
+  <head>
+      <title>drio drop</title>
+      <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.png">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta charset="utf-8"/>
+      <script src="/assets/htmx.min.js"></script>
+      <script src="/assets/logic.js"></script>
+      <link rel=stylesheet href="/assets/pico.min.css"/>
+      <link rel=stylesheet href="/assets/styles.css"/>
+  </head>
+  <body hx-boost="true">
+    <main class="container">
+      <h3><a href="/">THE DROP</a></h3>
+      <div id="love">Made with ❤️ by <a href="https://driohq.net">drio</a></div>
+
+      <div id="all">
+      <p>Drop your <mark>message</mark> and share the <mark>returned url</mark> with the recipient.
+      The <mark>first hit</mark> to the url will return the <mark>message</mark>. Subsequent requests will return a <mark>404</mark>.</p>
+
+      <p>Drop your msg here:</p>
+
+      <form>
+        <input type="textarea" name="data" id="data" required/>
+        <a class="button" href="/d/ui" role="button" hx-post="/d/ui" hx-trigger="click" hx-target="div#all">drop</a>
+      </form>
+
+      <p> Or you can use the cli: </p>
+
+      <pre>$ echo "message" | curl -X POST --data-binary @- \
+https://drop.driohq.net/d</pre>
+
+      </div>
+
+      {{template "footer" .}}
+    </main>
+  </body>
+</html>
+{{end}}

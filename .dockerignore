@@ -1,0 +1,22 @@
+# flyctl launch added from .gitignore
+**/node_modules
+**/*.vim
+**/.env*
+**/*.sqlite
+**/.env*
+**/node_modules
+**/*.vim
+**/.env*
+**/tmp
+**/log.txt
+**/c.out
+**/main-linux-amd64
+**/kae
+**/node_modules
+**/*.vim
+**/.env*
+**/main
+**/node_modules
+**/*.vim
+**/.env*
+fly.toml

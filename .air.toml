@@ -1,0 +1,41 @@
+root = "."
+testdata_dir = "testdata"
+tmp_dir = "tmp"
+
+[build]
+  #bin = "/opt/homebrew/bin/stdbuf --output=0 ./tmp/main | tee log.txt"
+  bin = "./main 2>&1 | tee log.txt"
+  cmd = "bash -c 'go build -o ./main *.go' && afplay ./assets/ok.wav || afplay ./assets/error.wav"
+  delay = 400
+  #exclude_dir = []
+  #exclude_file = []
+  #include_file = ["assets/style.css", "assets/logic.js"]
+  # Watch these filename extensions.
+  include_ext = ["go", "gohtml", "tmpl", "html", "css", "js", "env", "yaml"]
+  # Ignore these filename extensions or directories.
+  exclude_dir = ["tmp", "vendor", "node_modules", "build"]
+  #include_ext = ["go", "tpl", "tmpl", "html"]
+  exclude_regex = ["_test.go", "*.jpg", "*.png"]
+  exclude_unchanged = false
+  follow_symlink = false
+  full_bin = ""
+  kill_delay = "0s"
+  log = "build-errors.log"
+  send_interrupt = false
+  stop_on_error = true
+
+[color]
+  app = "lsnitch"
+  build = "yellow"
+  main = "magenta"
+  runner = "green"
+  watcher = "cyan"
+
+[log]
+  time = false
+
+[misc]
+  clean_on_exit = false
+
+[screen]
+  clear_on_rebuild = false

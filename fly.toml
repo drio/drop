@@ -1,0 +1,37 @@
+# deploy
+# fly deploy -a drio-drop-dev
+# fly deploy -a drio-drop
+# drop.driohq.net     -> drio-drop ip
+# drop-dev.driohq.net -> drio-drop-dev ip
+
+# get ips
+# flyctl ips list -a drio-drop
+
+# configure cert
+# create
+# flyctl certs create drop.driohq.net
+# check status
+# flyctl certs show drop.driohq.net
+
+# create app
+#
+# add volume:
+# flyctl volumes create drop_data --size=1 -r iad              
+
+# app = "drio-drop"
+
+primary_region = "iad"
+
+[env]
+  PORT = "9191"
+
+[http_service]
+  internal_port = 9191
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+
+[mounts]
+  source = "drop_data"
+  destination = "/data"

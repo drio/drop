@@ -1,0 +1,50 @@
+body {
+  padding: 1rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+main.container {
+  padding: 1rem;
+}
+
+h3 {
+  text-align: center;
+  padding: 0;
+  margin-bottom: 0rem;
+}
+
+h3 a {
+  text-decoration: none;
+}
+
+#love {
+  text-align: center;
+  padding: 0;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+  font-size: 0.7rem;
+}
+
+a.button {
+  padding: 0.5rem;
+}
+
+p {
+  margin-bottom: 0.7rem;
+}
+
+pre {
+  background: black;
+  padding: 1rem;
+}
+
+footer {
+  position: fixed;
+  left: 50%;
+  bottom: 1rem;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  color: grey;
+  opacity: 0.5;
+}
