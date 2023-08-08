@@ -1,4 +1,6 @@
-Drop: a simple tool to share messages securely with people.
+## Drop: a simple tool to share messages securely with people.
+
+### What is this?
 
 Visit the url where you have drop running and write your secret message.
 Then share the URL generated with the person you want to share the message with.
